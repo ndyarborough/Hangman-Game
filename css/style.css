@@ -14,11 +14,16 @@ body {
 }
 
 .cornerWindow {
-	height: 30%;
-	width: 40%;
-	border-right: #fff dotted 2px;
-	border-bottom: #fff dotted 2px;
+	height: 40%;
+	width: 50%;
 	float:left;
+}
+
+.cornerWindow img {
+	margin: 5%;
+	min-width: 100%;
+	min-height: 100%;
+	background-size: cover;
 }
 
 .instructions {
@@ -32,6 +37,7 @@ body {
 .memo {
 	color: #fff;
 	font-family: 'Shojumaru-Regular';
+	font-size: 3vw;
 }
 
 .scoreboard {

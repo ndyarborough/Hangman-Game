@@ -1,5 +1,6 @@
 
 var answerList = ["Ferrari", "Lamborghini", "Bugatti", "Pagani", "Koenigesegg", "Porsche", "Aston-Martin", "Alpha-Romeo", "BMW", "Audi", "Mercedes-Benz", "Toyota", "Nissan", "Honda", "Ford", "Dodge", "Fiat", ]
+var randNumber;
 var availableLetters = "abcdefghijklmnopqrstuvwxyz";
 var answer;
 var clue;
@@ -15,7 +16,8 @@ function newClue() {
 	// Selects the div we want to place the clue inside
 	var targetDiv = document.getElementById("clue");
 	// Selects a random answer from answerList
-		 answer = answerList[Math.floor(Math.random() * answerList.length)]
+	randNumber = [Math.floor(Math.random() * answerList.length)];
+	answer = answerList[randNumber];
 	console.log(answer);
 	 clue = "";
 		for (i = 0; i <  answer.length; i++) {
@@ -35,7 +37,7 @@ function newClue() {
  function initializeAvailableLetters() {
 
  	var letterBox = document.getElementById("letterBox");
-		
+		availableLetters = "abcdefghijklmnopqrstuvwxyz";
 	letterBox.innerHTML = availableLetters.toUpperCase();
  
 }
@@ -68,8 +70,12 @@ function updateAvailableLetters() {
 }
 
 function reset() { 
-					newClue();
 					initializeAvailableLetters();
+					newClue();
+					document.getElementById("clueText").innerHTML = "Clue: ";
+					document.getElementById("cornerWindow").innerHTML = "<img src='img/mystery-car.jpg'>";
+					document.getElementById("guessesRemaining").innerHTML = 10;			
+
 }
 
 
@@ -81,27 +87,32 @@ function reset() {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	window.onload = function reset() { 
+	window.onload = function () { 
 					newClue();
 					initializeAvailableLetters();
 					document.getElementById("guessesRemaining").textContent = "10";
 					document.getElementById("wins").textContent = "0";
 					document.getElementById("losses").textContent = "0";
+					document.getElementById("cornerWindow").innerHTML = "<img src='img/mystery-car.jpg'>";			
+
 				}
 
 
 	 document.onkeyup = function(event) {
 	
 	keyPressed = event.key;
+
 	guessesRemaining = document.getElementById("guessesRemaining");
 	wins = document.getElementById("wins");
 	losses = document.getElementById("losses");	
 	var correspondingIndex = answer.indexOf(keyPressed.toLowerCase());
   	var clueDiv = document.getElementById("clue");
-  	var clueDiv = document.getElementById("clue");
     letterIndex = [];
   	var alreadyGuessed = [];
-
+  		// If the game is over
+  		if (clue === answer || guessesRemaining.innerHTML < 1) {
+  			reset();
+  		}
 		// Is keyPressed is an alphabetical character
 		if (availableLetters.indexOf(keyPressed.toLowerCase()) != -1) {
 			if (answer.toLowerCase().indexOf(keyPressed.toLowerCase()) === -1) {
@@ -115,11 +126,15 @@ function reset() {
 
 			if (clue === answer) {
 				wins.innerHTML++;
-				reset();
+				document.getElementById("clueText").innerHTML = "You win! <br> Press any key to play again"; 
+			    document.getElementById("cornerWindow").innerHTML = "<img src='img/" + randNumber + ".jpg'>";			
 			}
+			// If you run out of guess and you didnt win then you lost
 			if (guessesRemaining.innerHTML < 1 && clue != answer) {
 				losses.innerHTML++;
-				reset();
+				document.getElementById("clueText").innerHTML = "You lose! The answer is " + answer + ".<br> Press any key to play again"; 
+			    document.getElementById("cornerWindow").innerHTML = "<img src='img/" + randNumber + ".jpg'>";			
+				// clueDiv.innerHTML = answer;
 			}
  
 
