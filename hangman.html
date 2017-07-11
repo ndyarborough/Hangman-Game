@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman Game</title>
+	<meta charset="UTF-8">
+	<link href="css/reset.css" type="text/css" rel="stylesheet">
+	<link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	
+	<div class="main-container">
+		<div class="cornerWindow">
+
+		</div>
+
+<!-- 	Please go back to this and make it dissapear after the first key is pressed-->		
+		<div class="instructions">
+
+			<h2 class="memo" id="memo"> Press any letter to begin</h2>
+
+			<div class="scoreboard">
+	
+				<h2  class="wins">Wins: <span id="wins"></span></h2>
+				<h2 class="losses">Losses: <span id="losses"></span></h2>
+				<h1 class="guessesRemaining">Guesses Remaining : <span id="guessesRemaining"></span></h1>
+
+
+			</div>
+		
+		</div>
+		
+		<div class="clueHeader">
+			<h1 class=clueText>Clue:</h1>
+	
+		</div>
+
+		<div id="clue"></div>
+
+		<h1 class="letterHeader">Available Letters</h1>
+		
+		<div id="letterBox" class="letterBox"></div>
+
+	</div>
+
+	<script src="hangman.js"></script>
+</body>
+</html>
