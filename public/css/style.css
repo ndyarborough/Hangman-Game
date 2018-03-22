@@ -1,0 +1,99 @@
+
+body {
+	background-image: url(../img/dark-triangles.png);
+	text-align: center;
+	font-family: 'Shojumaru-Regular';
+}
+
+.main-container {
+	height: 85vh;
+	width: 60vw;
+	background-color: #ccc;
+	border: #fff dotted 2px;
+	margin: 5vh auto;
+	padding:  0;
+}
+
+.cornerWindow {
+	height: 40%;
+	width: 50%;
+	float: left;
+}
+
+.cornerWindow img {
+	margin: 5%;
+    width: 30vw;
+    height: 35vh;
+}
+
+.instructions {
+	padding: 5vh 0 0 0;
+}
+#button {
+	background-color: yellow;
+}
+
+.memo {
+	color: #577CFF;
+	font-family: 'Shojumaru-Regular';
+	font-size: 3vw;
+}
+
+.scoreboard {
+	height: 10%;
+	text-align: center;
+	padding: 5vh 0 0 0;
+}
+
+
+.wins, .losses {
+	color: #577CFF;
+	margin-left: 20px;
+	display: inline;
+	font-family: Georgia;
+}
+
+.clueHeader {
+	color: #577CFF;
+	padding: 15vh 0 0 0;
+}
+.clueText {
+	font-size:2em;
+}
+
+.clue {
+	height: 8vh; 
+	margin: 3vh 0 0 0;
+}
+#clue {
+	color: #577CFF;
+	font-size: 5vw;
+	letter-spacing: 10px;
+}
+
+.guessesRemaining {
+	margin: 5vh 0 0 0;
+	color: #577CFF;
+	font-size: 1.4em; 
+
+}
+.wins, .losses {
+	color: #577CFF;
+	font-size: 1.4em; 
+}
+
+.letterBox {
+	height: 25%;
+	min-width: 100%;
+	margin: 6vh 0 0 0;
+	color: #FF3700;
+	font-size: 1.4em;
+	letter-spacing: 1vw;
+}
+
+.letterHeader {
+	color: #FF3700;
+	font-size: 2em;
+	margin: 6vh 0 0 0;
+}
+
