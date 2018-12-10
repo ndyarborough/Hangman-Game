@@ -1,2 +1,2 @@
-# Hangman-Game
-Hangman Javascript Game - Homework Assignment 3
+# Hangman
+Hangman Javascript Game
